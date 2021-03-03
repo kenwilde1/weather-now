@@ -1,3 +1,0 @@
-const getWeather = () => {};
-
-export { getWeather };
