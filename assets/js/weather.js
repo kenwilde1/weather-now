@@ -1,0 +1,3 @@
+const getWeather = () => {};
+
+export { getWeather };

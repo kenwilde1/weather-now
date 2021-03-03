@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Input Container Start */
+
+.input-container {
+  border-bottom: 1px solid black;
+  background: #3f85d1;
+  height: 20vh;
+}
+
+/* Input Container End */
+
+/* Results Container Start */
+
+.results-container {
+  background: url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+
+/* Results Container End */
