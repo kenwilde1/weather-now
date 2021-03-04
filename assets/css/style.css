@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Input Container Start */
+
+.input-container {
+  height: 20vh;
+  background: #072f5c;
+  border-bottom: 4px solid #4095f5;
+}
+
+/* Input Container End */
+
+/* Results Container Start */
+
+.live-weather-container {
+  border: 1px solid black;
+}
+
+/* Results Container End */
