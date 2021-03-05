@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.content {
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Input Container Start */
@@ -17,7 +25,38 @@
 /* Results Container Start */
 
 .live-weather-container {
-  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 35px;
+  border-radius: 10px;
+}
+
+.live-weather-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.live-weather-temp {
+  font-size: 6rem;
+}
+
+.live-weather-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Results Container End */
+
+/* Utility Styles Start */
+
+.hide {
+  display: none;
+}
+
+/* Utility Styles End */
