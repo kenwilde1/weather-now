@@ -1,7 +1,7 @@
 import WEATHER_KEY from "./config.js";
 import { convertEpochToDate, convertEpochToTime } from "./time.js";
 
-const getWeather = async (city) => {
+const getCurrentWeather = async (city) => {
   const formattedCity = city.toString().toLowerCase();
   const response = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=metric&appid=${WEATHER_KEY}`
@@ -32,7 +32,7 @@ const getWeather = async (city) => {
 
 const getForecastWeather = async (lat, lon) => {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_KEY}`
   );
   const { daily } = await response.json();
   const [, dayOne, dayTwo, dayThree, dayFour, dayFive, daySix] = daily;
@@ -71,4 +71,4 @@ const getForecastWeather = async (lat, lon) => {
   ];
 };
 
-export default getWeather;
+export { getCurrentWeather, getForecastWeather };

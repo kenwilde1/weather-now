@@ -1,62 +1,79 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap");
+
+:root {
+  --primary: #072f5c;
+}
 
 * {
-  padding: 0;
+  border: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Hind", sans-serif;
 }
 
-.content {
+button i {
+  color: white;
+}
+
+.container-fluid {
   height: 100vh;
-  width: 100vw;
+  background-color: #e8e8e8;
 }
 
-/* Input Container Start */
-
-.input-container {
-  height: 20vh;
-  background: #072f5c;
-  border-bottom: 4px solid #4095f5;
+.user-input-container {
+  height: 25vh;
+  background: var(--primary);
 }
 
-/* Input Container End */
-
-/* Results Container Start */
-
-.live-weather-container {
+.current-card {
   display: flex;
-  justify-content: space-between;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  padding: 35px;
+  flex-direction: column;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
+  padding: 10px;
+  background: white;
 }
 
-.live-weather-header {
+.forecast-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  background-color: white;
 }
 
-.live-weather-temp {
-  font-size: 6rem;
-}
-
-.live-weather-data {
+.forecast-day {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 10px;
 }
-
-/* Results Container End */
-
-/* Utility Styles Start */
 
 .hide {
   display: none;
 }
 
-/* Utility Styles End */
+.spinner-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.weather-location-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-location-info div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-location-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-image {
+  display: flex;
+}

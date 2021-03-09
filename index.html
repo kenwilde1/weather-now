@@ -21,25 +21,28 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row input-container align-items-center">
+      <div class="row">
         <div class="col-12">
-          <div class="row justify-content-center">
-            <div class="col-10 col-sm-8 col-mg-6 col-lg-4">
+          <div
+            class="row user-input-container justify-content-center align-items-center"
+          >
+            <div class="col-10 col-sm-10 col-md-8 col-lg-6 col-xl-4">
               <div class="input-group user-input">
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-warning"
                   type="button"
                   id="button-addon1"
                 >
                   <i class="fas fa-map-marker-alt"></i>
                 </button>
+
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Enter Location"
+                  placeholder="enter country, city or location"
                 />
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-warning"
                   type="button"
                   id="button-addon2"
                 >
@@ -50,26 +53,35 @@
           </div>
         </div>
       </div>
-      <div class="row"></div>
+      <div class="spinner-border hide text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="row">
         <div class="col-12">
-          <div class="row justify-content-center mt-3 text-center results-container">
-            <h2>Live Weather</h2>
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 live-weather-container mt-3 mb-4">
-              <div class="live-weather-header">
-                <img src="" alt="flag" class="live-weather-flag"/>
-                <h3 class="live-weather-location"></h3>
-                <h3 class="live-weather-date"></h3>
+          <div class="row results justify-content-center hide text-center">
+            <h2 class="mt-3">Live Weather</h2>
+            <div class="col-12 col-sm-10 col-md-8 current-card">
+              <div class="weather-location-info">
+                <div>
+                  <img src="" alt="location-flag" class="location-flag" />
+                  <h3 class="location-name"></h3>
+                </div>
+                <h3 class="location-date"></h3>
               </div>
-              <div class="live-weather-temp"></div>
-              <div class="live-weather-data">
-                <p class="live-wind-speed"></p>
-                <p class="live-weather-sunrise"></p>
-                <p class="live-weather-sunset"></p>
+              <div
+                class="weather-location-data justify-content-center align-items-center"
+              >
+                <p class="location-temp"></p>
+                <p class="location-description"></p>
+                <p class="location-wind-speed"></p>
+                <p class="location-sunrise"></p>
+                <p class="location-sunset"></p>
               </div>
             </div>
-            <h2>Forecast Weather</h2>
-            <div class="col-12 col-sm-10 col-md-8 col-lg-6 forecast-weather-container mt-3">
-              <div class="col-6 col-md-4 col-lg-2 forecast-day dayOne"></div>
+            <h2 class="mt-3">Forecast</h2>
+            <div class="col-12 col-sm-10 col-md-8 forecast-card mt-3">
+              <div class="row">
+                <div class="col-6 col-md-4 col-lg-2 forecast-day dayOne"></div>
                 <div class="col-6 col-md-4 col-lg-2 forecast-day dayTwo"></div>
                 <div
                   class="col-6 col-md-4 col-lg-2 forecast-day dayThree"
@@ -77,11 +89,21 @@
                 <div class="col-6 col-md-4 col-lg-2 forecast-day dayFour"></div>
                 <div class="col-6 col-md-4 col-lg-2 forecast-day dayFive"></div>
                 <div class="col-6 col-md-4 col-lg-2 forecast-day daySix"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="view-map mt-2 mb-4 hide">
+        <div class="row">
+          <div class="col-12 text-center">
+            <a id="google-maps-link" href="#" target="_blank"
+              >View on the map</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="./assets/js/index.js" type="module"></script>
+    <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>
