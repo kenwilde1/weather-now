@@ -11,13 +11,16 @@
   font-family: "Hind", sans-serif;
 }
 
+body {
+  background-color: #e8e8e8;
+}
+
 button i {
   color: white;
 }
 
 .container-fluid {
   height: 100vh;
-  background-color: #e8e8e8;
 }
 
 .user-input-container {
