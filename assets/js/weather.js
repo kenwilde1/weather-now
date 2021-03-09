@@ -3,8 +3,9 @@ import { convertEpochToDate, convertEpochToTime } from "./time.js";
 
 const getCurrentWeather = async (city) => {
   const formattedCity = city.toString().toLowerCase();
+  const metric = getMetric();
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=metric&appid=${WEATHER_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=${metric}&appid=${WEATHER_KEY}`
   );
   const {
     main,
@@ -20,7 +21,7 @@ const getCurrentWeather = async (city) => {
     temp: main.temp,
     description: weather[0].main,
     flagUrl: `https://www.countryflags.io/${sys.country}/flat/64.png`,
-    windSpeed: `Wind Speed: ${wind.speed} mph`,
+    windSpeed: `Wind Speed: ${wind.speed}`,
     location: `${name}, ${sys.country}`,
     lat: coord.lat,
     lon: coord.lon,
@@ -69,6 +70,15 @@ const getForecastWeather = async (lat, lon) => {
       description: daySix.weather[0].main,
     },
   ];
+};
+
+const getMetric = () => {
+  const target = document.querySelector("#toggle-button");
+  if (target.classList.contains("metric")) {
+    return "metric";
+  } else {
+    return "imperial";
+  }
 };
 
 export { getCurrentWeather, getForecastWeather };

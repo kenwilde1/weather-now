@@ -44,7 +44,13 @@ const populateResults = async () => {
   document.querySelector(".view-map").classList.toggle("hide");
 };
 
-// add event listener
+// add event listener to search for results
 document
   .querySelector("#button-addon2")
   .addEventListener("click", populateResults);
+
+// add event listener to toggle metric button
+document.querySelector("#toggle-button").addEventListener("click", (e) => {
+  e.target.classList.toggle("metric");
+  e.target.classList.toggle("imperial");
+});
