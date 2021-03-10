@@ -81,4 +81,4 @@ const getMetric = () => {
   }
 };
 
-export { getCurrentWeather, getForecastWeather };
+export { getCurrentWeather, getForecastWeather, getMetric };

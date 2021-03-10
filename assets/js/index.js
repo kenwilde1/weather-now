@@ -1,4 +1,5 @@
-import { getCurrentWeather, getForecastWeather } from "./weather.js";
+import { getCurrentWeather, getForecastWeather, getMetric } from "./weather.js";
+import toggleMetric from "./toggleMetric.js";
 
 const populateResults = async () => {
   const results = document.querySelector(".results");
@@ -15,18 +16,33 @@ const populateResults = async () => {
   document.querySelector(".location-date").innerHTML = data.date;
   document.querySelector(".location-name").innerHTML = data.location;
   document.querySelector(".location-flag").src = data.flagUrl;
-  document.querySelector(".location-temp").innerHTML = `${data.temp} °C`;
+  if (getMetric() === "metric") {
+    document.querySelector(".location-temp").innerHTML = `${data.temp} °C`;
+    document.querySelector(
+      ".location-wind-speed"
+    ).innerHTML = `${data.windSpeed} meter/sec`;
+  } else {
+    document.querySelector(".location-temp").innerHTML = `${data.temp} °F`;
+    document.querySelector(
+      ".location-wind-speed"
+    ).innerHTML = `${data.windSpeed} mile/hour`;
+  }
+
   document.querySelector(".location-description").innerHTML = data.description;
-  document.querySelector(".location-wind-speed").innerHTML = data.windSpeed;
+
   document.querySelector(".location-sunrise").innerHTML = data.sunrise;
   document.querySelector(".location-sunset").innerHTML = data.sunset;
 
   // modify DOM elements with forecast data
   const days = document.querySelectorAll(".forecast-day");
   for (let [index, day] of days.entries()) {
+    let metric = "°C";
+    if (getMetric() !== "metric") {
+      metric = "°F";
+    }
     day.innerHTML = `
     <h3>${forecast[index].date}</h3>
-    <p>${Math.ceil(forecast[index].temp)} °C</p>
+    <p>${Math.ceil(forecast[index].temp)} ${metric}</p>
     <div class="forecast-image">
     <p>${forecast[index].description}
     <img src='./assets/images/${forecast[
@@ -53,4 +69,5 @@ document
 document.querySelector("#toggle-button").addEventListener("click", (e) => {
   e.target.classList.toggle("metric");
   e.target.classList.toggle("imperial");
+  toggleMetric();
 });
