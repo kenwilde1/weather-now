@@ -1,0 +1,27 @@
+{
+  "name": "weather-now",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenwilde1/weather-now.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenwilde1/weather-now/issues"
+  },
+  "homepage": "https://github.com/kenwilde1/weather-now#readme",
+  "devDependencies": {
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

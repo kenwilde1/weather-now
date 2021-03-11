@@ -45,7 +45,7 @@ const populateResults = async (lat, lon) => {
     <p class="forecast-temp">${Math.ceil(forecast[index].temp)} ${metric}</p>
     <div class="forecast-image">
     <p>${forecast[index].description}
-    <img src='./assets/images/${forecast[
+    <img src='../images/${forecast[
       index
     ].description.toLowerCase()}.png' alt="weather" height="80" width="80" />
     </div>`;
@@ -63,7 +63,7 @@ const populateResults = async (lat, lon) => {
 // add event listener to search for results
 document.querySelector("#search-button").addEventListener("click", () => {
   document.querySelector(".spinner-border").classList.toggle("hide");
-  populateResults;
+  populateResults();
 });
 
 document

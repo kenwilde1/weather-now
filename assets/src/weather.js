@@ -1,5 +1,7 @@
-import WEATHER_KEY from "./config.js";
 import { convertEpochToDate, convertEpochToTime } from "./time.js";
+import dotenv from "dotenv";
+
+const WEATHER_KEY = process.env.API_KEY;
 
 const getCurrentWeather = async (city, lat, lon) => {
   const formattedCity = city.toString().toLowerCase();
