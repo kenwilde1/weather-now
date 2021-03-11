@@ -63,7 +63,7 @@ const populateResults = async (lat, lon) => {
 // add event listener to search for results
 document.querySelector("#search-button").addEventListener("click", () => {
   document.querySelector(".spinner-border").classList.toggle("hide");
-  populateResults;
+  populateResults();
 });
 
 document
