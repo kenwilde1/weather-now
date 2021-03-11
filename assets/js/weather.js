@@ -21,7 +21,7 @@ const getCurrentWeather = async (city) => {
     temp: main.temp,
     description: weather[0].main,
     flagUrl: `https://www.countryflags.io/${sys.country}/flat/64.png`,
-    windSpeed: `Wind Speed: ${wind.speed}`,
+    windSpeed: `Wind: ${wind.speed}`,
     location: `${name}, ${sys.country}`,
     lat: coord.lat,
     lon: coord.lon,
@@ -81,4 +81,4 @@ const getMetric = () => {
   }
 };
 
-export { getCurrentWeather, getForecastWeather, getMetric };
+export { getCurrentWeather, getForecastWeather };

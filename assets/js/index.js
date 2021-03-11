@@ -1,5 +1,5 @@
-import { getCurrentWeather, getForecastWeather, getMetric } from "./weather.js";
-import toggleMetric from "./toggleMetric.js";
+import { getCurrentWeather, getForecastWeather } from "./weather.js";
+import { toggleMetric, getMetric } from "./metric.js";
 
 const populateResults = async () => {
   const results = document.querySelector(".results");
@@ -42,7 +42,7 @@ const populateResults = async () => {
     }
     day.innerHTML = `
     <h3>${forecast[index].date}</h3>
-    <p>${Math.ceil(forecast[index].temp)} ${metric}</p>
+    <p class="forecast-temp">${Math.ceil(forecast[index].temp)} ${metric}</p>
     <div class="forecast-image">
     <p>${forecast[index].description}
     <img src='./assets/images/${forecast[

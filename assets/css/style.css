@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
+/* Global Styles */
+
 :root {
   --primary: #072f5c;
+  --secondary: #0a5ed7;
+  --tertiary: #e8e8e8;
+  --accent: #e69f6a;
+  --accentTwo: #ff6d00;
 }
 
 * {
@@ -12,15 +18,21 @@
 }
 
 body {
-  background-color: #e8e8e8;
-}
-
-button i {
-  color: white;
+  background-color: var(--tertiary);
 }
 
 .container-fluid {
   height: 100vh;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+/* User Input Container */
+
+button i {
+  color: white;
 }
 
 .user-input-container {
@@ -31,21 +43,66 @@ button i {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  border-bottom: 2px solid var(--accentTwo);
 }
 
-.toggle-metric-container {
-  display: flex;
-  justify-content: center;
+.results {
+  min-height: 75vh;
 }
+
+/* Live Weather Container */
 
 .current-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 30px;
   background: white;
 }
+
+.location-temp-container {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-temp {
+  font-size: 4rem;
+}
+
+.spinner-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.weather-location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 40%;
+}
+
+.weather-location-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.location-date {
+  text-align: left;
+}
+
+.weather-location-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Forecast Container */
 
 .forecast-card {
   display: flex;
@@ -58,33 +115,9 @@ button i {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-}
-
-.hide {
-  display: none;
-}
-
-.spinner-border {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.weather-location-info {
-  display: flex;
-  justify-content: space-between;
-}
-
-.weather-location-info div {
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-}
-
-.weather-location-data {
-  display: flex;
-  flex-direction: column;
+  padding: 10px;
 }
 
 .forecast-image {
@@ -94,6 +127,11 @@ button i {
 /* Toggle Metric */
 
 /* CSS for toggle switch button created by https://stackoverflow.com/a/39846603/14625822 */
+
+.toggle-metric-container {
+  display: flex;
+  justify-content: center;
+}
 
 .switch {
   position: relative;
@@ -113,7 +151,7 @@ button i {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #e69f6a;
+  background-color: var(--accent);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
@@ -133,7 +171,7 @@ button i {
 }
 
 input:checked + .slider {
-  background-color: #ff6d00;
+  background-color: var(--accentTwo);
 }
 
 input:focus + .slider {
@@ -160,4 +198,24 @@ input:checked + .slider:before {
 
 input:checked + .slider:after {
   content: "°F";
+}
+
+/* View on Map Container*/
+
+.view-map {
+  margin-bottom: 100px;
+}
+
+/* Footer Container */
+
+.footer {
+  border-top: 1px solid var(--accentTwo);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  background: var(--tertiary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

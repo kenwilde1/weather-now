@@ -1,5 +1,13 @@
 const convertEpochToDate = (time) => {
-  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let fullDate = new Date(time * 1000);
   return `${daysOfWeek[fullDate.getDay()]} ${fullDate.getDate()}`;
 };
