@@ -209,7 +209,7 @@ input:checked + .slider:after {
 /* Footer Container */
 
 .footer {
-  border-top: 1px solid var(--accentTwo);
+  border-top: 2px solid var(--accentTwo);
   left: 0;
   bottom: 0;
   width: 100%;

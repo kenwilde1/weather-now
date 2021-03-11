@@ -1,12 +1,20 @@
 import WEATHER_KEY from "./config.js";
 import { convertEpochToDate, convertEpochToTime } from "./time.js";
 
-const getCurrentWeather = async (city) => {
+const getCurrentWeather = async (city, lat, lon) => {
   const formattedCity = city.toString().toLowerCase();
   const metric = getMetric();
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=${metric}&appid=${WEATHER_KEY}`
-  );
+  let response;
+  if (lat && lon) {
+    response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${metric}&appid=${WEATHER_KEY}`
+    );
+  } else {
+    response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=${metric}&appid=${WEATHER_KEY}`
+    );
+  }
+
   const {
     main,
     weather,

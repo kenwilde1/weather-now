@@ -1,7 +1,8 @@
 import { getCurrentWeather, getForecastWeather } from "./weather.js";
 import { toggleMetric, getMetric } from "./metric.js";
+import getDeviceCoordinates from "./geolocation.js";
 
-const populateResults = async () => {
+const populateResults = async (lat, lon) => {
   const results = document.querySelector(".results");
   if (!results.classList.contains("hide")) {
     results.classList.toggle("hide");
@@ -9,7 +10,7 @@ const populateResults = async () => {
   document.querySelector(".spinner-border").classList.toggle("hide");
 
   const userLocation = document.querySelector(".form-control").value;
-  const data = await getCurrentWeather(userLocation);
+  const data = await getCurrentWeather(userLocation, lat, lon);
   const forecast = await getForecastWeather(data.lat, data.lon);
 
   // modify DOM elements with current weather data
@@ -62,8 +63,15 @@ const populateResults = async () => {
 
 // add event listener to search for results
 document
-  .querySelector("#button-addon2")
+  .querySelector("#search-button")
   .addEventListener("click", populateResults);
+
+document
+  .querySelector("#current-location")
+  .addEventListener("click", async () => {
+    const { lat, lon } = await getDeviceCoordinates();
+    populateResults(lat, lon);
+  });
 
 // add event listener to toggle metric button
 document.querySelector("#toggle-button").addEventListener("click", (e) => {
