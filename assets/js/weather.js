@@ -25,6 +25,7 @@ const getCurrentWeather = async (city, lat, lon) => {
     dt,
     timezone,
   } = await response.json();
+
   return {
     temp: main.temp,
     description: weather[0].main,

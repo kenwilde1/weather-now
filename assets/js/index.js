@@ -7,7 +7,6 @@ const populateResults = async (lat, lon) => {
   if (!results.classList.contains("hide")) {
     results.classList.toggle("hide");
   }
-  document.querySelector(".spinner-border").classList.toggle("hide");
 
   const userLocation = document.querySelector(".form-control").value;
   const data = await getCurrentWeather(userLocation, lat, lon);
@@ -62,13 +61,15 @@ const populateResults = async (lat, lon) => {
 };
 
 // add event listener to search for results
-document
-  .querySelector("#search-button")
-  .addEventListener("click", populateResults);
+document.querySelector("#search-button").addEventListener("click", () => {
+  document.querySelector(".spinner-border").classList.toggle("hide");
+  populateResults;
+});
 
 document
   .querySelector("#current-location")
   .addEventListener("click", async () => {
+    document.querySelector(".spinner-border").classList.toggle("hide");
     const { lat, lon } = await getDeviceCoordinates();
     populateResults(lat, lon);
   });
