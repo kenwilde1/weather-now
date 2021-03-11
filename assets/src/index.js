@@ -45,7 +45,7 @@ const populateResults = async (lat, lon) => {
     <p class="forecast-temp">${Math.ceil(forecast[index].temp)} ${metric}</p>
     <div class="forecast-image">
     <p>${forecast[index].description}
-    <img src='../images/${forecast[
+    <img src='./images/${forecast[
       index
     ].description.toLowerCase()}.png' alt="weather" height="80" width="80" />
     </div>`;
