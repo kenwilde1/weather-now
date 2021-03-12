@@ -3,41 +3,60 @@ import { convertEpochToDate, convertEpochToTime } from "./time.js";
 
 const getCurrentWeather = async (city, lat, lon) => {
   const formattedCity = city.toString().toLowerCase();
-  const metric = getMetric();
-  let response;
-  if (lat && lon) {
-    response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${metric}&appid=${WEATHER_KEY}`
-    );
-  } else {
-    response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=${metric}&appid=${WEATHER_KEY}`
-    );
+
+  // ensures no numbers are in the string
+  if (/\d/.test(formattedCity)) {
+    document.querySelector(".spinner-border").classList.toggle("hide");
+    alert(`'${city}' is not a valid location, try again`);
+    return;
   }
 
-  const {
-    main,
-    weather,
-    sys,
-    wind,
-    name,
-    coord,
-    dt,
-    timezone,
-  } = await response.json();
+  const metric = getMetric();
+  let response;
+  try {
+    if (lat && lon) {
+      response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${metric}&appid=${WEATHER_KEY}`
+      );
+    } else {
+      response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${formattedCity}&units=${metric}&appid=${WEATHER_KEY}`
+      );
+    }
 
-  return {
-    temp: main.temp,
-    description: weather[0].main,
-    flagUrl: `https://www.countryflags.io/${sys.country}/flat/64.png`,
-    windSpeed: `Wind: ${wind.speed}`,
-    location: `${name}, ${sys.country}`,
-    lat: coord.lat,
-    lon: coord.lon,
-    date: convertEpochToDate(dt),
-    sunrise: `Sunrise: ${convertEpochToTime(sys.sunrise, timezone)} A.M`,
-    sunset: `Sunset: ${convertEpochToTime(sys.sunset, timezone)} P.M`,
-  };
+    // if response is not HTTP 200, tell user to try again
+    if (!response.ok) {
+      document.querySelector(".spinner-border").classList.toggle("hide");
+      alert(`'${city}' is an invalid location, try again`);
+      return;
+    }
+
+    const {
+      main,
+      weather,
+      sys,
+      wind,
+      name,
+      coord,
+      dt,
+      timezone,
+    } = await response.json();
+
+    return {
+      temp: main.temp,
+      description: weather[0].main,
+      flagUrl: `https://www.countryflags.io/${sys.country}/flat/64.png`,
+      windSpeed: `Wind: ${wind.speed}`,
+      location: `${name}, ${sys.country}`,
+      lat: coord.lat,
+      lon: coord.lon,
+      date: convertEpochToDate(dt),
+      sunrise: `Sunrise: ${convertEpochToTime(sys.sunrise, timezone)} A.M`,
+      sunset: `Sunset: ${convertEpochToTime(sys.sunset, timezone)} P.M`,
+    };
+  } catch (err) {
+    alert("There was an error in making your request, try again.");
+  }
 };
 
 const getForecastWeather = async (lat, lon) => {

@@ -9,7 +9,9 @@ const populateResults = async (lat, lon) => {
   }
 
   const userLocation = document.querySelector(".form-control").value;
+
   const data = await getCurrentWeather(userLocation, lat, lon);
+
   const forecast = await getForecastWeather(data.lat, data.lon);
 
   // modify DOM elements with current weather data
@@ -62,6 +64,7 @@ const populateResults = async (lat, lon) => {
 
 // add event listener to search for results
 document.querySelector("#search-button").addEventListener("click", () => {
+  document.querySelector(".how-to-container").classList.toggle("hide");
   document.querySelector(".spinner-border").classList.toggle("hide");
   populateResults();
 });
@@ -69,6 +72,7 @@ document.querySelector("#search-button").addEventListener("click", () => {
 document
   .querySelector("#current-location")
   .addEventListener("click", async () => {
+    document.querySelector(".how-to-container").classList.toggle("hide");
     document.querySelector(".spinner-border").classList.toggle("hide");
     const { lat, lon } = await getDeviceCoordinates();
     populateResults(lat, lon);

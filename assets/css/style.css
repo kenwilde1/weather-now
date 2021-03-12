@@ -220,10 +220,83 @@ input:checked + .slider:after {
   align-items: center;
 }
 
-@media only screen and (max-width: 480px) {
-  .location-name {
-    font-size: 0.2rem;
+/* Sun Animation created by https://codemyui.com/animated-weather-icons-in-css/ */
+
+.how-to-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  min-width: 300px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-to-info h4 {
+  text-align: center;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  margin: -1.25em;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.375em var(--primary);
+  animation: spin 12s infinite linear;
+}
+.rays {
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  display: block;
+  width: 0.375em;
+  height: 1.125em;
+  margin-left: -0.1875em;
+  background: var(--primary);
+  border-radius: 0.25em;
+  box-shadow: 0 5.375em var(--primary);
+}
+.rays:before,
+.rays:after {
+  content: "";
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  display: block;
+  width: 0.375em;
+  height: 1.125em;
+  transform: rotate(60deg);
+  transform-origin: 50% 3.25em;
+  background: var(--primary);
+  border-radius: 0.25em;
+  box-shadow: 0 5.375em var(--primary);
+}
+.rays:before {
+  transform: rotate(120deg);
+}
+
+.icon {
+  position: relative;
+  width: 12em;
+  height: 10em;
+  font-size: 1em; /* control icon size here */
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
+}
+
+@media only screen and (max-width: 480px) {
   .location-temp {
     font-size: 3rem;
   }
