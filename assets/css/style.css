@@ -308,7 +308,7 @@ input:checked + .slider:after {
   }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 500px) {
   .location-temp {
     font-size: 2.2rem;
   }

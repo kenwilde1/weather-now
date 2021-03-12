@@ -71,7 +71,7 @@ document.querySelector("#search-button").addEventListener("click", () => {
 document
   .querySelector("#current-location")
   .addEventListener("click", async () => {
-    document.querySelector(".how-to-container").classList.toggle("hide");
+    document.querySelector(".how-to-container").classList.add("hide");
     document.querySelector(".spinner-border").classList.toggle("hide");
     const { lat, lon } = await getDeviceCoordinates();
     populateResults(lat, lon);
