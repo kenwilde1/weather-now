@@ -10,6 +10,7 @@
       type="image/x-icon"
     />
     <title>Weather Now</title>
+    <!-- Styles, Libraries, Fonts -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -25,9 +26,11 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
+    <!-- Content Container -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
+          <!-- User Input Container -->
           <div
             class="row user-input-container justify-content-center align-items-center"
           >
@@ -64,15 +67,18 @@
           </div>
         </div>
       </div>
+      <!-- Loading Spinner when request is made -->
       <div class="spinner-border hide text-warning" role="status">
         <span class="sr-only">Loading...</span>
       </div>
       <div class="row">
         <div class="col-12">
+          <!-- Results Container -->
           <div class="row results justify-content-center hide text-center">
             <h2 class="mt-3">Live Weather</h2>
+            <!-- Live Weather Container -->
             <div
-              class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 current-card"
+              class="col-12 col-sm-10 col-md-10 col-lg-8 col-xl-5 current-card"
             >
               <div class="weather-location-info">
                 <div class="weather-location-header">
@@ -92,23 +98,35 @@
               </div>
             </div>
             <h2 class="mt-3">Forecast</h2>
+            <!-- Forecast Container -->
             <div
-              class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 forecast-card mt-3"
+              class="col-12 col-sm-10 col-md-10 col-lg-6 col-xl-5 forecast-card mt-3"
             >
               <div class="row">
-                <div class="col-6 col-md-4 col-lg-4 forecast-day dayOne"></div>
-                <div class="col-6 col-md-4 col-lg-4 forecast-day dayTwo"></div>
                 <div
-                  class="col-6 col-md-4 col-lg-4 forecast-day dayThree"
+                  class="col-12 col-sm-6 col-md-4 col-lg-4 forecast-day dayOne"
                 ></div>
-                <div class="col-6 col-md-4 col-lg-4 forecast-day dayFour"></div>
-                <div class="col-6 col-md-4 col-lg-4 forecast-day dayFive"></div>
-                <div class="col-6 col-md-4 col-lg-4 forecast-day daySix"></div>
+                <div
+                  class="col-12 col-sm-6 col-md-4 col-lg-4 forecast-day dayTwo"
+                ></div>
+                <div
+                  class="col-12 col-sm-6 col-md-4 col-lg-4 forecast-day dayThree"
+                ></div>
+                <div
+                  class="col-12 col-sm-6 col-md-4 col-lg-4 forecast-day dayFour"
+                ></div>
+                <div
+                  class="col-12 col-sm-6 col-md-4 col-lg-4 forecast-day dayFive"
+                ></div>
+                <div
+                  class="col-12 col-sm-6 col-md-4 col-lg-4 forecast-day daySix"
+                ></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- Hyperlink Google Maps -->
       <div class="view-map mt-4 hide">
         <div class="row">
           <div class="col-12 text-center">
@@ -118,6 +136,7 @@
           </div>
         </div>
       </div>
+      <!-- Footer -->
       <footer class="footer">
         <div class="footer-items"></div>
       </footer>

@@ -219,3 +219,15 @@ input:checked + .slider:after {
   justify-content: center;
   align-items: center;
 }
+
+@media only screen and (max-width: 480px) {
+  .location-name {
+    font-size: 0.2rem;
+  }
+  .location-temp {
+    font-size: 3rem;
+  }
+  .weather-location-data {
+    font-size: 0.8rem;
+  }
+}

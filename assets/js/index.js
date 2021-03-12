@@ -20,7 +20,7 @@ const populateResults = async (lat, lon) => {
     document.querySelector(".location-temp").innerHTML = `${data.temp} °C`;
     document.querySelector(
       ".location-wind-speed"
-    ).innerHTML = `${data.windSpeed} meter/sec`;
+    ).innerHTML = `${data.windSpeed} mtr/sec`;
   } else {
     document.querySelector(".location-temp").innerHTML = `${data.temp} °F`;
     document.querySelector(
