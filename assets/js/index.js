@@ -21,7 +21,7 @@ const populateResults = async (lat, lon) => {
   document.querySelector(".location-humidity").innerHTML = data.humidity;
   document.querySelector(
     ".location-image"
-  ).src = `./assets/images/${data.description}.png`;
+  ).src = `assets/images/${data.description}.png`;
   document.querySelector(".location-wind-speed").innerHTML = data.windSpeed;
   if (getMetric() === "metric") {
     document.querySelector(".location-temp").innerHTML = `${data.temp} °C`;
