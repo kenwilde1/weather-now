@@ -18,16 +18,15 @@ const populateResults = async (lat, lon) => {
   document.querySelector(".location-date").innerHTML = data.date;
   document.querySelector(".location-name").innerHTML = data.location;
   document.querySelector(".location-flag").src = data.flagUrl;
+  document.querySelector(".location-humidity").innerHTML = data.humidity;
+  document.querySelector(
+    ".location-image"
+  ).src = `./assets/images/${data.description}.png`;
+  document.querySelector(".location-wind-speed").innerHTML = data.windSpeed;
   if (getMetric() === "metric") {
     document.querySelector(".location-temp").innerHTML = `${data.temp} °C`;
-    document.querySelector(
-      ".location-wind-speed"
-    ).innerHTML = `${data.windSpeed} mtr/sec`;
   } else {
     document.querySelector(".location-temp").innerHTML = `${data.temp} °F`;
-    document.querySelector(
-      ".location-wind-speed"
-    ).innerHTML = `${data.windSpeed} mile/hour`;
   }
 
   document.querySelector(".location-description").innerHTML = data.description;

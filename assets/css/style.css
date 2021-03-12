@@ -54,22 +54,28 @@ button i {
 
 .current-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
   padding: 30px;
   background: white;
+  gap: 1rem;
 }
 
 .location-temp-container {
-  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .location-temp {
   font-size: 4rem;
+}
+
+.weather-location-info {
+  display: flex;
+  justify-content: space-around;
 }
 
 .spinner-border {
@@ -78,17 +84,10 @@ button i {
   left: 50%;
 }
 
-.weather-location-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  width: 40%;
-}
-
 .weather-location-header {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   gap: 1rem;
 }
 
@@ -122,6 +121,10 @@ button i {
 
 .forecast-image {
   display: flex;
+}
+
+.forecast-temp {
+  font-size: 2rem;
 }
 
 /* Toggle Metric */
@@ -302,5 +305,21 @@ input:checked + .slider:after {
   }
   .weather-location-data {
     font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .location-temp {
+    font-size: 2.2rem;
+  }
+  .weather-location-header h4 {
+    font-size: 0.9rem;
+  }
+  .weather-location-data {
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .weather-location-info {
+    flex-direction: column;
   }
 }
