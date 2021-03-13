@@ -40,6 +40,7 @@
                   class="btn btn-primary"
                   type="button"
                   id="current-location"
+                  aria-label="current-location-button"
                 >
                   <i class="fas fa-map-marker-alt"></i>
                 </button>
@@ -53,6 +54,7 @@
                   class="btn btn-primary"
                   type="button"
                   id="search-button"
+                  aria-label="search-button"
                 >
                   <i class="fas fa-search"></i>
                 </button>
@@ -61,7 +63,7 @@
             <div class="col-10 toggle-metric-container">
               <label class="switch">
                 <input type="checkbox" />
-                <div class="slider round metric" id="toggle-button"></div>
+                <span class="slider round metric" id="toggle-button"></span>
               </label>
             </div>
           </div>
@@ -99,9 +101,9 @@
               class="col-12 col-sm-10 col-md-10 col-lg-8 col-xl-6 current-card"
             >
               <div class="weather-location-header">
-                <img src="" alt="location-flag" class="location-flag" />
-                <h4 class="location-name"></h4>
-                <h4 class="location-date"></h4>
+                <img src="#" alt="location-flag" class="location-flag" />
+                <h4 class="location-name">placeholder location name</h4>
+                <h4 class="location-date">placeholder location date</h4>
               </div>
               <div class="weather-location-info">
                 <div class="location-temp-container">
@@ -165,15 +167,28 @@
       <!-- Footer -->
       <footer class="footer">
         <div class="footer-items">
-          <a href="https://github.com/kenwilde1" target="_blank"
+          <a
+            href="https://github.com/kenwilde1"
+            target="_blank"
+            aria-label="github"
+            rel="noopener"
+            rel="noreferrer"
             ><i class="fab fa-github"></i
           ></a>
           <a
             href="https://linkedin.com/in/kenny-wilde-3831b6141/"
             target="_blank"
+            aria-label="linkedin"
+            rel="noopener"
+            rel="noreferrer"
             ><i class="fab fa-linkedin"></i
           ></a>
-          <a href="mailto:kennywilde00@gmail.com" target="_blank"
+          <a
+            href="mailto:kennywilde00@gmail.com"
+            target="_blank"
+            aria-label="email-me"
+            rel="noopener"
+            rel="noreferrer"
             ><i class="far fa-envelope"></i
           ></a>
         </div>
