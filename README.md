@@ -136,17 +136,86 @@ The Wireframes were created at 3 target resolutions:
 - Developed in Google Chrome and Dev Tools used to debug & test.
 - Git / Github for Version Control and Issue Management.
 - [Stack Overflow](https://stackoverflow.com/) for CSS toggler.
-- [Netlify](https://www.netlify.com/) for Deployment
+- GitHub Pages for Deployment.
+
+[Back to Top](#table-of-contents)
 
 ## Features
 
+##### How to Use container
+
+When the User visits the web application, there will be a 'how to use' container explaining the instructions on what the application offers. It details the three interactive options the User has before a result is shown.
+
+##### Current Location Weather
+
+The User can click the current location button which uses the Geolocation API, the browser will then ask the User permissiont to access their device's location. Once that is accepted, the weather results shown will be for that location - using latitude and longitude of the User's device.
+
+##### Search Custom Location Weather
+
+The User can instead, enter their own custom location into the Input. Once they click search, the weather API will return weather data for that location.
+
+##### Live Weather
+
+When the User submits a search - current or custom location - the app will display a live weather container. This live weather will have key information about the location. This includes Temperature, Humidity, Wind Speed, Sunrise, Sunset and a description of the weather e.g Cloudy.
+
+It was decided that this information was most important to a User seeking live weather information. More information could have been added but could lead to overwhelming the User.
+
+##### Forecast Weather
+
+In addition to live weather, the User will receive Forecasted Weather for that location. It will provide the User with the _next_ 6 days of weather information - combined with live weather, totals to 7 day weather data. The Forecasted Weather prediction will have minimal but crucial information - date, temperature and weather description.
+
+##### View Map
+
+Using the coordinates of the location the User searched, there will be a hyperlink at the end of the results. It uses these coordinates to autofill a Google Maps query and bring the User to that location in Google Maps in another tab.
+
+##### Footer
+
+The footer contains information on how to contact me - Github, LinkedIn and Email. These buttons bring the User to another tab to view the app.
+
 #### Future Features:
+
+##### Forecast Graph
+
+A future feature could provide data in another medium - through the usage of graphs. A line-graph can give the User an indication of where the weather temperature is trending i.e in the next couple of days, is it getting colder or warmer?
+
+##### Individual Forecast View
+
+The User can click on a given forecast day and it will expand with a view that has more information about that day's weather prediction.
+
+##### Embed Weather Map
+
+Embedding a widget such as windy.com for the User's location could give them another way to view the live weather data.
+
+[Back to Top](#table-of-contents)
 
 ## Testing
 
-#### Found Bugs & Fixes:
+Testing can be viewed at [TESTING.md](https://github.com/kenwilde1/weather-now/blob/main/TESTING.md)
+
+[Back to Top](#table-of-contents)
 
 ## Deployment
+
+The Weather Now application was deployed to GitHub Pages. Github pages reads from the `main` branch and then finds the `index.html` to host. Here are the following steps I undertook to deploy my application to Github Pages:
+
+- Visit the [repository](https://github.com/kenwilde1/weather-now) page.
+- Click on the Settings tab.
+- Scroll down to Github Pages.
+- Select source as `main`.
+- Click Save.
+
+A deployment of the site begins and the url is generated. This is also continuous deployment, when the main branch gets updated, Github pages will perform a new deployment with the new changes.
+
+If you would like to run this locally or clone this repository, you can:
+
+- Visit the [repository](https://github.com/kenwilde1/weather-now) page.
+- Click on the Code tab above the files.
+- Choose the Clone source e.g HTTPS.
+- Open your Command Line / Terminal.
+- Run the following command: `git clone <repo-url>`.
+- (If you do not have git installed, you can visit [here](https://git-scm.com/downloads) to do so.)
+
+This will then download a copy of the remote repository on Github to your local machine. To run the application, simply open `index.html`. As it is a front-end static website, you do not need to run it on a live server.
 
 [Back to Top](#table-of-contents)
 
