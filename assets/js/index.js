@@ -6,6 +6,7 @@ const populateResults = async (lat, lon) => {
   const results = document.querySelector(".results");
   if (!results.classList.contains("hide")) {
     results.classList.toggle("hide");
+    document.querySelector(".view-map").classList.toggle("hide");
   }
 
   const userLocation = document.querySelector(".form-control").value;
@@ -63,7 +64,7 @@ const populateResults = async (lat, lon) => {
 
 // add event listener to search for results
 document.querySelector("#search-button").addEventListener("click", () => {
-  document.querySelector(".how-to-container").classList.toggle("hide");
+  document.querySelector(".how-to-container").classList.add("hide");
   document.querySelector(".spinner-border").classList.toggle("hide");
   populateResults();
 });

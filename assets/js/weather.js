@@ -6,6 +6,7 @@ const getCurrentWeather = async (city, lat, lon) => {
 
   // ensures no numbers are in the string
   if (/\d/.test(formattedCity)) {
+    document.querySelector(".how-to-container").classList.toggle("hide");
     document.querySelector(".spinner-border").classList.toggle("hide");
     alert(`'${city}' is not a valid location, try again`);
     return;
@@ -26,6 +27,7 @@ const getCurrentWeather = async (city, lat, lon) => {
 
     // if response is not HTTP 200, tell user to try again
     if (!response.ok) {
+      document.querySelector(".how-to-container").classList.toggle("hide");
       document.querySelector(".spinner-border").classList.toggle("hide");
       alert(`'${city}' is an invalid location, try again`);
       return;

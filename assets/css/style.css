@@ -206,13 +206,13 @@ input:checked + .slider:after {
 /* View on Map Container*/
 
 .view-map {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 /* Footer Container */
 
 .footer {
-  border-top: 2px solid var(--accentTwo);
+  border-top: 1px solid var(--accentTwo);
   left: 0;
   bottom: 0;
   width: 100%;
@@ -221,6 +221,17 @@ input:checked + .slider:after {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+
+.footer-items {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-items a i {
+  font-size: 1.3rem;
+  color: var(--primary);
 }
 
 /* Sun Animation created by https://codemyui.com/animated-weather-icons-in-css/ */
