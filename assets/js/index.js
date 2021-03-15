@@ -5,6 +5,7 @@ import getDeviceCoordinates from "./geolocation.js";
 const populateResults = async (lat, lon) => {
   const results = document.querySelector(".results");
   if (!results.classList.contains("hide")) {
+    console.log(true);
     results.classList.toggle("hide");
     document.querySelector(".view-map").classList.toggle("hide");
   }

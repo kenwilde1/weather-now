@@ -131,12 +131,28 @@ The Wireframes were created at 3 target resolutions:
 
 #### Tools Used
 
-- APIs - [OpenWeatherMap](https://openweathermap.org/api), [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) and [Country Flags](https://www.countryflags.io/).
-- Weather Icon Pack - [RNS Weather Icons](https://iconstore.co/icons/rns-weather-icons/).
-- Developed in Google Chrome and Dev Tools used to debug & test.
-- Git / Github for Version Control and Issue Management.
-- [Stack Overflow](https://stackoverflow.com/) for CSS toggler.
-- GitHub Pages for Deployment.
+- [OpenWeatherMap API](https://openweathermap.org/api)
+  - Open Weather API was used to source all weather data both live and forecast. It requires an API key but the APIs used for this project were within the free-plan threshold.
+- [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+  - Built most modern browsers, it grabs the User's device latitude and longitude, these details are then served to the OpenWeather API.
+- [Country Flags API](https://www.countryflags.io/)
+  - In order to improve UX, flags were also sourced to add to the results. Once the country was grabbed from OpenWeather, it was then served to Country Flags to retrieve a URL for that specific country's flag.
+- [RNS Weather Icons](https://iconstore.co/icons/rns-weather-icons/)
+  - Based on the description of the weather, the web application displays an appropriate weather image e.g Clear, Clouds, Rain etc.
+- [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools)
+  - Used for all debugging and testing. Ensured the page was responsive on all relevant devices.
+- [Git / Github](https://git-scm.com/)
+  - Github was used for remote storing of Version Control. Additionally, the Issues tab on the repository was used to effectively manage to-do items.
+- [Stack Overflow](https://stackoverflow.com/)
+  - Used to help debug certain issues and also code used to create CSS temperature toggler.
+- [Google Fonts](https://fonts.google.com/)
+  - The 'Poppins' font was sourced from Google Fonts, it is imported on line 1 of the stylesheet.
+- [VSCode](https://code.visualstudio.com/)
+  - VSCode was used as the development environemnt. It has a plethora of extensions which aided me in this project such as:
+    - Prettier - format the code on every save.
+    - Live Server - launch a local server hosting my index.html.
+    - Markdown Preview Enhancement - write README.md and TESTING.md whilst having a preview tab that had live updates of my changes.
+    - ESLint - analyzed my JS code and provided recommendations for issues. Led to overall cleaner code.
 
 [Back to Top](#table-of-contents)
 

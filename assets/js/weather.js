@@ -63,8 +63,9 @@ const getCurrentWeather = async (city, lat, lon) => {
 };
 
 const getForecastWeather = async (lat, lon) => {
+  const metric = getMetric();
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_KEY}`
+    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${metric}&appid=${WEATHER_KEY}`
   );
   const { daily } = await response.json();
   const [, dayOne, dayTwo, dayThree, dayFour, dayFive, daySix] = daily;
