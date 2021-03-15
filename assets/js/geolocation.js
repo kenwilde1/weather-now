@@ -1,3 +1,5 @@
+// grabs user's device coordinates
+// if disabled or not supported, informs the User
 const getDeviceCoordinates = async () => {
   const rejected = () => {
     alert("Geolocation is not supported by your browser or is not enabled.");

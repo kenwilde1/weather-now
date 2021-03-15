@@ -2,6 +2,7 @@ import { getCurrentWeather, getForecastWeather } from "./weather.js";
 import { toggleMetric, getMetric } from "./metric.js";
 import getDeviceCoordinates from "./geolocation.js";
 
+// take in lat, lon and display weather results
 const populateResults = async (lat, lon) => {
   const results = document.querySelector(".results");
   if (!results.classList.contains("hide")) {
@@ -70,6 +71,7 @@ document.querySelector("#search-button").addEventListener("click", () => {
   populateResults();
 });
 
+// add event listener to current location button
 document
   .querySelector("#current-location")
   .addEventListener("click", async () => {

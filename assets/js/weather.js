@@ -1,6 +1,7 @@
 import WEATHER_KEY from "./config.js";
 import { convertEpochToDate, convertEpochToTime } from "./time.js";
 
+// get live weather data using fetch
 const getCurrentWeather = async (city, lat, lon) => {
   const formattedCity = city.toString().toLowerCase();
 
@@ -62,6 +63,7 @@ const getCurrentWeather = async (city, lat, lon) => {
   }
 };
 
+// get forecast weather data, uses different API endpoint
 const getForecastWeather = async (lat, lon) => {
   const metric = getMetric();
   const response = await fetch(
@@ -102,15 +104,6 @@ const getForecastWeather = async (lat, lon) => {
       description: daySix.weather[0].main,
     },
   ];
-};
-
-const getMetric = () => {
-  const target = document.querySelector("#toggle-button");
-  if (target.classList.contains("metric")) {
-    return "metric";
-  } else {
-    return "imperial";
-  }
 };
 
 export { getCurrentWeather, getForecastWeather };
