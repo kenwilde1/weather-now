@@ -106,7 +106,6 @@ button i {
 .forecast-card {
   display: flex;
   flex-direction: column;
-  background-color: white;
 }
 
 .forecast-day {
@@ -117,6 +116,7 @@ button i {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  background-color: white;
 }
 
 .forecast-image {

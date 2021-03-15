@@ -13,7 +13,6 @@
 - [User Testing](#user-testing)
   - [Browser Compatibility](#browser-compatibility)
   - [User Stories Testing](#user-stories-testing)
-  - [Peer Code Review](#peer-code-review)
   - [User Inputs Testing](#user-inputs)
 - [Bugs](#bugs)
 
@@ -125,8 +124,57 @@ This section will go through each User Story created and see if the objective ha
 
 ### User Inputs
 
+With the use of an input element, a lot of User Testing is required. The input needed to be sanitized before reaching the API request. If the request was unsuccessful due to the input, the web application needed to relay that to the user and try again. The following steps were taken to test and handle User Inputs:
+
+- Ensure all input strings were lowercase. The API was case sensitive. If a User entered in 'Dublin', it would fail, whereas 'dublin' would succeed. The following code ensured it was lowercase before reaching the API:
+
+```
+const formattedCity = city.toString().toLowerCase();
+```
+
+- There was some unexpected behaviour when the User entered in numbers. For example, '12345' would retrieve results and return weather data from a place in Ukraine. On further investigation, the API actually accepted City IDs as a param. As this was unwanted behaviour, I implemented RegEx testing to ensure any entered input were characters and not numbers:
+
+```
+if (/\d/.test(formattedCity)) {
+    alert(`'${formattedCity}' is not a valid location, try again`);
+    return;
+  }
+```
+
+- If the API request failed, it was required to inform the User and stop the request loop. In order to handle any requests that failed, I implemented the following to inform the User that the input they searched for was not valid:
+
+```
+if (!response.ok) {
+      alert(`'${city}' is an invalid location, try again`);
+      return;
+    }
+```
+
+This ensured that any HTTP code that was not HTTP 200, would return the user with some feedback.
+
+- If the above methods did not catch any errors, I also wrapped the fetch function in a try, catch. If the code returned any errors that weren't already handled, it would catch and alert the User.
+
+```
+try {
+  // fetch weather data
+} catch(err) {
+  alert(err)
+}
+```
+
 [Back to top](#table-of-contents)
 
 ### Bugs
+
+- Geolocation API disabled - If the User rejected the permissions request by the Browser to enabled Geolocation, the app would load indefinitely along with a console error.
+  - In order to solve this, I created a reject function that was triggered if a promise was rejected, the promise waited for permissions, if the permission was denied, it would trigger the rejected function. This function alerts the User they need to enable the API and returns the function to stop the loop spinning indefinitely.
+    <br />
+- Selecting Fahrenheit before searching - If the user selects fahrenheit before searching, it would return the results in celsius. This is because the toggle switch only handled converting temps that were already in display.
+
+  - To fix this, I created a getMetric function. Before retrieving weather data, this function was called to see if the metric was set to imperial or metric - (fahrenheit or celsius) - based on this value, it would pass it onto the fetch call so the results would come back in either celsius or fahrenheit.
+    <br />
+
+- Inputting Numbers to Input Element - If the User inputted numbers to the input, certain numbers would actually yield a successful result. This was due to the API accepting City IDs as valid params.
+  - As this was an unintended feature, the input needed to be sanitized with a regex test to ensure the input did not contain any numbers, if it did - then alert the user that it is not valid and to try again.
 
 Click here to go back to [README.md](https://github.com/kenwilde1/crate-o-wine/blob/main/TESTING.md#testing)
