@@ -1,6 +1,6 @@
 import WEATHER_KEY from "./config.js";
 import { convertEpochToDate, convertEpochToTime } from "./time.js";
-import { getMetric } from "./metric";
+import { getMetric } from "./metric.js";
 
 // get live weather data using fetch
 const getCurrentWeather = async (city, lat, lon) => {
