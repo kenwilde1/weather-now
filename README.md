@@ -21,8 +21,6 @@
   - [Future Features](#future-features)
 - [Testing](#testing)
 - [Deployment](#deployment)
-- [External Resources](#external-resources)
-- [Credits](#credits)
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -235,10 +233,10 @@ This will then download a copy of the remote repository on Github to your local 
 
 [Back to Top](#table-of-contents)
 
-## Credits
-
-[Back to Top](#table-of-contents)
-
-#### Acknowledgements:
+## Acknowledgements:
+- My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) helped along the way and ensured I was 
+- `#interactive-front-end` slack channel helped me with any queries I had. 
+- `#peer-code-review` helped me identify my search was broken due to a typo when pushing new changes to my repository. 
+- Dan Abramov's [JustJavaScript](https://justjavascript.com/) which helped me build accurate mental models of how JavaScript behaved which then helped me figure out bugs. 
 
 [Back to Top](#table-of-contents)

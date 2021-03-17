@@ -134,6 +134,7 @@ button i {
 .toggle-metric-container {
   display: flex;
   justify-content: center;
+  margin-top: 1vh;
 }
 
 .switch {
@@ -227,6 +228,11 @@ input:checked + .slider:after {
 .footer-items {
   display: flex;
   gap: 2rem;
+}
+
+#linkedin-footer-item {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .footer-items a i {

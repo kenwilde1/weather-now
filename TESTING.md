@@ -176,5 +176,21 @@ try {
 
 - Inputting Numbers to Input Element - If the User inputted numbers to the input, certain numbers would actually yield a successful result. This was due to the API accepting City IDs as valid params.
   - As this was an unintended feature, the input needed to be sanitized with a regex test to ensure the input did not contain any numbers, if it did - then alert the user that it is not valid and to try again.
+<br />
+- On Safari, flexbox `gap` is not supported which led to the following undesired effect on the footer items:
+<img src="./markdown-images/flexbox-bug.jpg" alt="flexbox-bug" />
+
+  As a workaround, I decided to add some margin to the middle-icon, so that it would also look fine for browsers that did support flexbox gap:
+
+  ```
+  #linkedin-footer-item {
+  margin-left: 5px;
+  margin-right: 5px;
+  }
+  ```
+  <br />
+  <img src="./markdown-images/fixed-flexbox-bug.png" alt="flexbox-fix" />
+
+<br />
 
 Click here to go back to [README.md](https://github.com/kenwilde1/crate-o-wine/blob/main/TESTING.md#testing)

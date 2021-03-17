@@ -14,6 +14,7 @@ const getCurrentWeather = async (city, lat, lon) => {
     return;
   }
 
+  // get metric - celsius || imperial - to make API call with
   const metric = getMetric();
   let response;
   try {
