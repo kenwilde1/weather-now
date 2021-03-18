@@ -237,7 +237,7 @@ This will then download a copy of the remote repository on Github to your local 
 
 ## Acknowledgements:
 
-- My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) helped along the way and ensured I was
+- My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) helped along the way and ensured I was adhering to the highest standards.
 - `#interactive-front-end` slack channel helped me with any queries I had.
 - `#peer-code-review` helped me identify my search was broken due to a typo when pushing new changes to my repository.
 - Dan Abramov's [JustJavaScript](https://justjavascript.com/) which helped me build accurate mental models of how JavaScript behaved which then helped me figure out bugs.
