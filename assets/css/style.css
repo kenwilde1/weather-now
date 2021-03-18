@@ -56,7 +56,6 @@ button i {
   display: flex;
   flex-direction: column;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 10px;
   padding: 30px;
   background: white;
   gap: 1rem;
@@ -110,7 +109,6 @@ button i {
 
 .forecast-day {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
