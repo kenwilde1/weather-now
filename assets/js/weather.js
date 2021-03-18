@@ -7,7 +7,8 @@ const getCurrentWeather = async (city, lat, lon) => {
   const formattedCity = city.toString().toLowerCase();
 
   // ensures no numbers are in the string
-  if (/\d/.test(formattedCity)) {
+  // ensures if city is a string of whitepace, return an alert
+  if (/\d/.test(formattedCity) || formattedCity[0] === " ") {
     document.querySelector(".how-to-container").classList.toggle("hide");
     document.querySelector(".spinner-border").classList.toggle("hide");
     alert(`'${city}' is not a valid location, try again`);
