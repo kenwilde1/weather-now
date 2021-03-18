@@ -340,3 +340,13 @@ input:checked + .slider:after {
     flex-direction: column;
   }
 }
+
+@media only screen and (max-width: 570px) {
+  .current-card {
+    border-radius: 0px;
+  }
+  .forecast-day {
+    padding: 20px;
+    border-radius: 0px;
+  }
+}
