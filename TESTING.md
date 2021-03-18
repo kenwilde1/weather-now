@@ -7,11 +7,13 @@
 - [Code Validation](#code-validation)
   - [W3C HTML Validator](#w3c-html-validator)
   - [W3C CSS Jigsaw Validator](#w3c-css-jigsaw-validator)
+  - [JSHint](#jshint)
 - [Performance](#performance)
   - [PageSpeed Insights](#pagespeed-insights)
   - [Google Lighthouse](https://github.com/kenwilde1/crate-o-wine/blob/main/TESTING.md#google-lighthouse)
 - [User Testing](#user-testing)
   - [Browser Compatibility](#browser-compatibility)
+  - [Responsiveness Testing](#responsiveness-testing)
   - [User Stories Testing](#user-stories-testing)
   - [User Inputs Testing](#user-inputs)
 - [Bugs](#bugs)
@@ -33,6 +35,22 @@ The HTML was checked using the W3C validator, it recommended aria-labels on the 
 The Custom CSS `style.css` was validated using [Jigsaw](https://jigsaw.w3.org/css-validator/validator) and had no errors or warnings:
 
 <img src="./markdown-images/css-validator.png" alt="css validated">
+
+### JSHint
+
+JSHint was used to detect any potential errors or problems in my JS code. Additionally, I used ESLint within my IDE to catch any errors during development.
+
+The following JS files were tested using JSHint:
+
+- [index.js](https://github.com/kenwilde1/weather-now/blob/main/assets/js/index.js)
+- [geolocation.js](https://github.com/kenwilde1/weather-now/blob/main/assets/js/geolocation.js)
+- [weather.js](https://github.com/kenwilde1/weather-now/blob/main/assets/js/weather.js)
+- [metric.js](https://github.com/kenwilde1/weather-now/blob/main/assets/js/metric.js)
+- [time.js](https://github.com/kenwilde1/weather-now/blob/main/assets/js/time.js)
+
+There were no errors present after checking with JSHint. There were quite a few warnings though. However, as I was using `import`, `arrow functions =>` and `let & const` - the warnings were only advising that certain versions of ECMAScript supported this syntax.
+
+[Back to top](#table-of-contents)
 
 ---
 
@@ -75,22 +93,35 @@ The following functions were tested on the following browsers using a pass / fai
 
 **Note**: Responsiveness covers Desktop, Mobile and Tablet.
 
+| Function                 |              Browser              | Result |
+| ------------------------ | :-------------------------------: | -----: |
+| Geolocation API          | Chrome / Firefox / Safari / Opera |   Pass |
+| Search Weather           | Chrome / Firefox / Safari / Opera |   Pass |
+| Toggle Metric Switch     | Chrome / Firefox / Safari / Opera |   Pass |
+| Display Live Weather     | Chrome / Firefox / Safari / Opera |   Pass |
+| Display Forecast Weather | Chrome / Firefox / Safari / Opera |   Pass |
+| Import Images            | Chrome / Firefox / Safari / Opera |   Pass |
+| View Map Hyperlink       | Chrome / Firefox / Safari / Opera |   Pass |
+| Footer Links             | Chrome / Firefox / Safari / Opera |   Pass |
+
+[Back to top](#table-of-contents)
+
+### Responsiveness Testing
+
+Throughout development, responsivess was always considered, especially as it is a single-page application.
+
+The following breakpoints were tested using Chrome Dev Tools:
+
+- **Desktop** - 1920px x 1080px
+- **Tablet** - 768px x 1024px
+- **Mobile** - 360px x 640px
+
 | Function                   |              Browser              | Result |
 | -------------------------- | :-------------------------------: | -----: |
 | Input Resposivness         | Chrome / Firefox / Safari / Opera |   Pass |
 | Live Weather Responsivness | Chrome / Firefox / Safari / Opera |   Pass |
 | Forecast Responsiveness    | Chrome / Firefox / Safari / Opera |   Pass |
 | Footer Responsivness       | Chrome / Firefox / Safari / Opera |   Pass |
-| Geolocation API            | Chrome / Firefox / Safari / Opera |   Pass |
-| Search Weather             | Chrome / Firefox / Safari / Opera |   Pass |
-| Toggle Metric Switch       | Chrome / Firefox / Safari / Opera |   Pass |
-| Display Live Weather       | Chrome / Firefox / Safari / Opera |   Pass |
-| Display Forecast Weather   | Chrome / Firefox / Safari / Opera |   Pass |
-| Import Images              | Chrome / Firefox / Safari / Opera |   Pass |
-| View Map Hyperlink         | Chrome / Firefox / Safari / Opera |   Pass |
-| Footer Links               | Chrome / Firefox / Safari / Opera |   Pass |
-
-[Back to top](#table-of-contents)
 
 ### User Stories Testing
 
@@ -176,9 +207,9 @@ try {
 
 - Inputting Numbers to Input Element - If the User inputted numbers to the input, certain numbers would actually yield a successful result. This was due to the API accepting City IDs as valid params.
   - As this was an unintended feature, the input needed to be sanitized with a regex test to ensure the input did not contain any numbers, if it did - then alert the user that it is not valid and to try again.
-<br />
+    <br />
 - On Safari, flexbox `gap` is not supported which led to the following undesired effect on the footer items:
-<img src="./markdown-images/flexbox-bug.jpg" alt="flexbox-bug" />
+  <img src="./markdown-images/flexbox-bug.jpg" alt="flexbox-bug" />
 
   As a workaround, I decided to add some margin to the middle-icon, so that it would also look fine for browsers that did support flexbox gap:
 
@@ -188,8 +219,9 @@ try {
   margin-right: 5px;
   }
   ```
-  <br />
-  <img src="./markdown-images/fixed-flexbox-bug.png" alt="flexbox-fix" />
+
+    <br />
+    <img src="./markdown-images/fixed-flexbox-bug.png" alt="flexbox-fix" />
 
 <br />
 
