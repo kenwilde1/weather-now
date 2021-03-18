@@ -37,6 +37,8 @@
 
 Weather Now - Milestone Project #2 - is a Front-end Web Application that provides Users with live weather data and forecast data. For Milestone Project #2, it helps demonstrate updating DOM elements with JSON from a REST API. It also provides another chance to solidify and practice more CSS and Design Skills.
 
+Live Deployment can be viewed here at [Weather Now](https://kenwilde1.github.io/weather-now/).
+
 [Back to top](#table-of-contents)
 
 ## User Experience:
@@ -234,9 +236,10 @@ This will then download a copy of the remote repository on Github to your local 
 [Back to Top](#table-of-contents)
 
 ## Acknowledgements:
-- My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) helped along the way and ensured I was 
-- `#interactive-front-end` slack channel helped me with any queries I had. 
-- `#peer-code-review` helped me identify my search was broken due to a typo when pushing new changes to my repository. 
-- Dan Abramov's [JustJavaScript](https://justjavascript.com/) which helped me build accurate mental models of how JavaScript behaved which then helped me figure out bugs. 
+
+- My mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) helped along the way and ensured I was
+- `#interactive-front-end` slack channel helped me with any queries I had.
+- `#peer-code-review` helped me identify my search was broken due to a typo when pushing new changes to my repository.
+- Dan Abramov's [JustJavaScript](https://justjavascript.com/) which helped me build accurate mental models of how JavaScript behaved which then helped me figure out bugs.
 
 [Back to Top](#table-of-contents)
